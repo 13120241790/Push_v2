@@ -1,4 +1,4 @@
-package com.julive.push;
+package com.comjia.push;
 
 import org.junit.Test;
 

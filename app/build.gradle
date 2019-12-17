@@ -4,17 +4,46 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.1"
     defaultConfig {
-        applicationId "com.julive.push"
+        applicationId "com.comjia.push"
         minSdkVersion 16
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
+    signingConfigs {
+        config {
+            storeFile file("julivepush.keystore")
+            storePassword "comjia123"
+            keyAlias "julivepush"
+            keyPassword "comjia123"
+        }
+    }
+
     buildTypes {
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.config
+            manifestPlaceholders = [
+                    JPUSH_PKGNAME: 'com.comjia.push',
+                    JPUSH_APPKEY : "0dc337f2661e3264374bcd05", //JPush 上注册的包名对应的 Appkey.
+                    JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+
+                    HUAWEI_APPID : "101221803"
+            ]
+        }
         release {
             minifyEnabled false
+            signingConfig signingConfigs.config
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            manifestPlaceholders = [
+                    JPUSH_PKGNAME: 'com.comjia.push',
+                    JPUSH_APPKEY : "0dc337f2661e3264374bcd05", //JPush 上注册的包名对应的 Appkey.
+                    JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+
+                    HUAWEI_APPID : "101221803"
+            ]
         }
     }
 }
@@ -26,4 +55,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    implementation project(path: ':library')
+    //极光
+    implementation 'cn.jiguang.sdk:jpush:3.3.6'
+    implementation 'cn.jiguang.sdk:jcore:2.1.6'
 }
