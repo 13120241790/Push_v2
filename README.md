@@ -37,7 +37,7 @@ Push v1 README: https://github.com/13120241790/Push
 
 通过 Jenkins 提供可视化的 Push SDK 构建。例如: 现在我的项目只需要华为推送，在 Jenkins 的可视化工具上勾选华为这个时候生成的 SDK 就是只包含华为推送相关代码。这个方法有两个弊端: 
 
-1. 某天项目发现小米的设备安装量在上来决定接入小米。这个时候原本 Push SDK 就不够适用了，需要重新去 Jenkins 构建平台上重新勾选包含华为+小米的 Push SDK 
+1. 项目发现小米的设备安装量在上升 决定接入小米 Push。这个时候原本 Push SDK 就不够适用了，需要重新去 Jenkins 构建平台上重新勾选包含华为+小米的 Push SDK 
 2. Jenkins 的可视化 Push SDK 构建成本，背后必然是有一套 Python&Shell 脚本去维护和操作对 Push SDK Java 代码的打包，一个是这个工作量大另外一个还要求对脚本语言 Python&Shell  + Groovy 有一定涉猎
 
 
