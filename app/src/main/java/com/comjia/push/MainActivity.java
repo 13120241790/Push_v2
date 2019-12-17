@@ -9,6 +9,7 @@ import com.comjia.push.library.OnPushActionListener;
 import com.comjia.push.library.core.PushClient;
 import com.comjia.push.library.core.PushType;
 
+
 public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = MainActivity.class.getSimpleName();
