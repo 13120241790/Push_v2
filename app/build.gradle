@@ -59,5 +59,9 @@ dependencies {
     //极光
     implementation 'cn.jiguang.sdk:jpush:3.3.6'
     implementation 'cn.jiguang.sdk:jcore:2.1.6'
+    //小米
     implementation files('libs/MiPush_SDK_Client_3_6_19.jar')
+    //华为
+    api 'com.huawei.android.hms:base:2.6.3.301'
+    api 'com.huawei.android.hms:push:2.6.3.301'
 }
